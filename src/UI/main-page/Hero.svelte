@@ -51,7 +51,7 @@
 
   .hero-logo {
     max-height: 17.5rem;
-    width: 100%;
+    max-width: 100%;
     z-index: 1;
     filter: drop-shadow(black 0 0 3rem);
   }

@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  background-color: BLACK;
+  padding: 3rem;
+}
+
+body::after {
+  content: "";
+  background-image: url(./img/noise.webp);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.card__side {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 0 0 2rem #000;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.card__side:hover .flip-icon {
+  transform: scale(1.1);
+}
+.card__side:hover .btn-flip {
+  box-shadow: 0 0 5rem rgba(230, 137, 43, 0.9);
+}
+
+.card__side--front {
+  background-size: 100%;
+  padding-top: 1.2rem;
+}
+
+.card__side--back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-size: 100%;
+  padding-top: 5rem;
+}
+
+.rotated .card__side--front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.rotated .card__side--back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 62em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  body {
+    padding: 0;
+  }
+}
